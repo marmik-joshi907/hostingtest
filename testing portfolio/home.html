@@ -1,0 +1,112 @@
+<div class="home-container">
+    <div class="hero-content">
+        <h2 class="text-gradient">{{subtitle}}</h2>
+        <h1>{{title}}</h1>
+        <p class="hero-desc">I craft scalable, high-performance web applications with a focus on modern aesthetic design and seamless user experiences.</p>
+        
+        <div class="hero-actions">
+            <a href="#!/projects" class="btn">View My Work</a>
+            <a href="#!/contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="blob"></div>
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=600" alt="Developer setup" class="hero-img">
+    </div>
+</div>
+
+<style>
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.2));
+    filter: blur(50px);
+    border-radius: 50%;
+    z-index: -1;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+}
+
+.hero-img:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.02);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@media screen and (max-width: 992px) {
+    .home-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-desc {
+        margin: 0 auto 2rem;
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+}
+</style>

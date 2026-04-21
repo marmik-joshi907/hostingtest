@@ -1,0 +1,113 @@
+<div class="about-container">
+    <div class="about-header text-center">
+        <h2>About <span class="text-gradient">Me</span></h2>
+        <p>Passionate developer bridging the gap between design and scalable engineering.</p>
+    </div>
+
+    <div class="about-grid">
+        <div class="about-text glass-card">
+            <h3>My Journey</h3>
+            <p>I started my journey in web development writing simple HTML pages and have since evolved into building complex single-page applications and machine learning integrations. My philosophy centers around clean code, elegant interfaces, and robust architecture.</p>
+            <p>When I'm not coding, you can find me exploring new tech stacks or contributing to open-source projects.</p>
+        </div>
+
+        <div class="skills-container glass-card">
+            <h3>Core Skills</h3>
+            <div class="skills-list">
+                <div class="skill-item" ng-repeat="skill in skills">
+                    <div class="skill-info">
+                        <span><i class="ph {{skill.icon}}"></i> {{skill.name}}</span>
+                        <span>{{skill.level}}%</span>
+                    </div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width:{{skill.level}}%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.about-container {
+    padding: 2rem 0;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-header h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-header p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.glass-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.glass-card h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.skill-info i {
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+.skill-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
